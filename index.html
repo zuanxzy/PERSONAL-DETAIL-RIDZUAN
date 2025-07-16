@@ -5,6 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Muhammad Ridzuan Bin Darwin</title>
   <link rel="stylesheet" href="style.css" />
+
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Personal website of Muhammad Ridzuan Bin Darwin – Future educator, tech enthusiast and forensics learner. View my profile, skills and contact info.">
+  <meta name="keywords" content="Ridzuan, Portfolio, Corporate Investigation, SMART College, Forensics, HTML, Resume, Malaysia">
+  <meta name="author" content="Muhammad Ridzuan Bin Darwin">
+
   <!-- AOS Library -->
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
@@ -13,7 +19,8 @@
   <nav class="navbar">
     <div class="nav-container">
       <a href="#" class="logo">Ridzuan</a>
-      <ul class="nav-links">
+      <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+      <ul class="nav-links" id="nav-links">
         <li><a href="#about">About</a></li>
         <li><a href="#interests">Interests</a></li>
         <li><a href="#skills">Skills</a></li>
@@ -50,27 +57,22 @@
     <section id="skills" data-aos="zoom-in">
       <h2>Skills</h2>
       <p>Here are some of my key skills, along with my proficiency levels:</p>
-
       <div class="skill">
         <span>Microsoft Office</span>
         <div class="skill-bar"><div class="fill" style="width: 90%;">90%</div></div>
       </div>
-
       <div class="skill">
         <span>Report Writing</span>
         <div class="skill-bar"><div class="fill" style="width: 85%;">85%</div></div>
       </div>
-
       <div class="skill">
         <span>Canva Design</span>
         <div class="skill-bar"><div class="fill" style="width: 88%;">88%</div></div>
       </div>
-
       <div class="skill">
         <span>HTML/CSS</span>
         <div class="skill-bar"><div class="fill" style="width: 75%;">75%</div></div>
       </div>
-
       <div class="skill">
         <span>Digital Forensics (Basic)</span>
         <div class="skill-bar"><div class="fill" style="width: 60%;">60%</div></div>
@@ -89,14 +91,16 @@
     <a href="https://drive.google.com" class="btn" target="_blank" data-aos="fade-up">📄 View My Resume</a>
   </div>
 
+  <footer class="footer" data-aos="fade-up">
+    <p>© 2025 Made with 💻 by <strong><a href="https://github.com/zuanxzy" target="_blank">Muhammad Ridzuan Bin Darwin</a></strong></p>
+  </footer>
+
   <script>
     const text = "Muhammad Ridzuan Bin Darwin";
     let index = 0;
     let typing = true;
-
     function updateTitle() {
       document.title = text.substring(0, index);
-
       if (typing) {
         if (index < text.length) {
           index++;
@@ -114,20 +118,26 @@
           return;
         }
       }
-
       setTimeout(updateTitle, 120);
     }
-
     updateTitle();
   </script>
+
   <script>
     AOS.init({
       duration: 1000,
       once: true
     });
   </script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const toggleBtn = document.getElementById('menu-toggle');
+      const navLinks = document.getElementById('nav-links');
+      toggleBtn.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+      });
+    });
+  </script>
 </body>
 </html>
-<footer class="footer" data-aos="fade-up">
-<p>© 2025 Made with ❤️ by <strong><a href="https://github.com/zuanxzy" target="_blank">Muhammad Ridzuan Bin Darwin</a></strong></p>
-</footer>
