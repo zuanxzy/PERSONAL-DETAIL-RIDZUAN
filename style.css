@@ -1,66 +1,97 @@
-/* style.css */
+/* Professional style.css upgrade */
 
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
-  background-color: #001f4d; /* biru tua */
-  color: #fff;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: linear-gradient(135deg, #001f4d 0%, #004080 100%);
+  color: #f8f9fa;
+  min-height: 100vh;
 }
 
 header {
-  background-color: #111;
-  padding: 2rem;
+  background: #0a1931;
+  padding: 2.5rem 1rem 2rem 1rem;
   text-align: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
 }
 
 header h1 {
   margin: 0;
-  font-size: 2.5rem;
+  font-size: 2.7rem;
+  letter-spacing: 2px;
+  font-weight: 700;
+  color: #00aaff;
+  text-shadow: 1px 2px 8px #00336622;
 }
 
 header p {
-  margin: 0.5rem 0 0;
-  font-size: 1.2rem;
+  margin: 0.7rem 0 0;
+  font-size: 1.15rem;
+  color: #bcd8f7;
 }
 
 .container {
-  padding: 2rem;
-  max-width: 800px;
+  padding: 2.5rem 1rem;
+  max-width: 900px;
   margin: 0 auto;
+  background: rgba(10,25,49,0.90);
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.10);
 }
 
 section {
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #23395d;
 }
 
 h2 {
-  border-bottom: 1px solid #444;
-  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #00aaff;
+  padding-bottom: 0.4rem;
+  font-size: 1.5rem;
+  color: #00aaff;
+  letter-spacing: 1px;
+  margin-top: 0;
 }
 
 .profile-img {
-  width: 150px;
-  height: 150px;
+  width: 148px;
+  height: 148px;
   border-radius: 50%;
   object-fit: cover;
   display: block;
-  margin: 1rem auto;
+  margin: 1.5rem auto 1rem auto;
+  box-shadow: 0 2px 12px rgba(0, 170, 255, 0.25);
+  border: 3px solid #00aaff;
+}
+
+.contact-info {
+  text-align: center;
 }
 
 .contact-info a {
   color: #00aaff;
   text-decoration: none;
+  transition: color 0.2s;
+  font-weight: 500;
+}
+.contact-info a:hover,
+.contact-info a:focus {
+  color: #fff;
+  text-decoration: underline;
 }
 
 .contact-info p {
-  margin: 0.2rem 0;
+  margin: 0.3rem 0;
 }
+
 .typewriter {
   overflow: hidden;
   border-right: 2px solid #fff;
   white-space: nowrap;
   letter-spacing: 2px;
   animation: typing 2.5s steps(20, end), blink 0.75s step-end infinite;
+  max-width: 100%;
 }
 
 @keyframes typing {
@@ -71,4 +102,18 @@ h2 {
 @keyframes blink {
   from, to { border-color: transparent }
   50% { border-color: #fff }
+}
+
+/* Responsive improvements */
+@media (max-width: 600px) {
+  .container {
+    padding: 1.2rem 0.5rem;
+  }
+  header h1 {
+    font-size: 2rem;
+  }
+  .profile-img {
+    width: 110px;
+    height: 110px;
+  }
 }
