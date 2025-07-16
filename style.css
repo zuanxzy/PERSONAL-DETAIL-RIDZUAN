@@ -1,6 +1,8 @@
 /* style.css */
-html {
+html, body {
   scroll-behavior: smooth;
+  overflow-x: hidden;
+  width: 100%;
 }
 
 /* RESET & BASE */
@@ -15,6 +17,16 @@ body {
   background-color: #001f3f;
   color: #f0f0f0;
   line-height: 1.6;
+}
+
+/* GLOBAL CONTAINER CONTROL */
+.container,
+.navbar,
+header,
+section,
+footer {
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 /* NAVBAR */
@@ -57,6 +69,14 @@ body {
 
 .nav-links a:hover {
   color: #ffcc00;
+}
+
+/* BURGER MENU */
+.menu-toggle {
+  display: none;
+  font-size: 1.8rem;
+  color: #fff;
+  cursor: pointer;
 }
 
 /* HEADER */
@@ -165,24 +185,6 @@ h2 {
   background-color: #0072ff;
 }
 
-/* KEYFRAMES */
-@keyframes fadeInDown {
-  from {
-    opacity: 0;
-    transform: translateY(-30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes fillGrow {
-  0% {
-    width: 0;
-  }
-}
-
 /* SKILLS BAR */
 .skill {
   margin-bottom: 1.2rem;
@@ -227,15 +229,25 @@ h2 {
   color: #00c6ff;
 }
 
-/* BURGER MENU */
-.menu-toggle {
-  display: none;
-  font-size: 1.8rem;
-  color: #fff;
-  cursor: pointer;
+/* KEYFRAMES */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-/* Responsive Navigation */
+@keyframes fillGrow {
+  0% {
+    width: 0;
+  }
+}
+
+/* RESPONSIVE */
 @media (max-width: 768px) {
   .menu-toggle {
     display: block;
@@ -260,4 +272,10 @@ h2 {
   .nav-links li {
     margin-bottom: 1rem;
   }
+
+  .nav-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
+
