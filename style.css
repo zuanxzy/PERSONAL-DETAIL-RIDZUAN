@@ -98,7 +98,8 @@ ul {
 header {
   text-align: center;
   padding: 3rem 2rem;
-  background: linear-gradient(to right, #001933, #002f5f);
+  background: linear-gradient(to right, rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+              url('images/bg.jpg') no-repeat center center/cover;
 }
 
 .gradient-text {
@@ -117,11 +118,6 @@ header {
 
 section {
   margin-bottom: 3rem;
-}
-
-section p,
-section ul,
-section li {
   text-align: justify;
 }
 
@@ -276,5 +272,22 @@ input:focus, textarea:focus {
   .nav-container {
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  header {
+    padding: 2rem 1rem;
+  }
+
+  .gradient-text {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.4rem;
+  }
+
+  .btn {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.95rem;
   }
 }
