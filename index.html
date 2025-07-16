@@ -40,25 +40,37 @@
       <h2>Contact</h2>
       <div class="contact-info">
         <p>Email: <a href="mailto:Ridzuan245z@gmail.com">Ridzuan245z@gmail.com</a></p>
-        <p>Phone: 011-23096167</p>
+        <a href="tel:01123096167">011-23096167</a>
       </div>
     </section>
   </div>
 
-  <!-- Typewriter for browser tab -->
-  <script>
-    const text = "Muhammad Zuan Darwin";
-    let index = 0;
+<script>
+  const text = "Muhammad Zuan Darwin";
+  let index = 0;
+  let direction = 1; // 1 for typing, -1 for deleting
+  let delay = 120;
 
-    function typeTitle() {
-      if (index <= text.length) {
-        document.title = text.substring(0, index);
-        index++;
-        setTimeout(typeTitle, 150);
-      }
+  function updateTitle() {
+    document.title = text.substring(0, index);
+
+    if (direction === 1 && index < text.length) {
+      index++;
+    } else if (direction === 1 && index === text.length) {
+      direction = -1;
+      delay = 900; // Pause at full text
+    } else if (direction === -1 && index > 0) {
+      index--;
+    } else if (direction === -1 && index === 0) {
+      direction = 1;
+      delay = 500; // Pause at empty
     }
 
-    typeTitle();
-  </script>
+    setTimeout(updateTitle, delay);
+    delay = 120; // Reset delay after pauses
+  }
+
+  updateTitle();
+</script>
 </body>
 </html>
