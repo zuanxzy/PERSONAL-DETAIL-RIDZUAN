@@ -44,6 +44,7 @@ img {
 @keyframes spin {
   to { transform: rotate(360deg); }
 }
+
 /* Welcome Screen Animation */
 #welcome-screen {
   position: fixed;
@@ -53,7 +54,15 @@ img {
   align-items: center;
   justify-content: center;
   z-index: 99999;
-  animation: fadeOut 2s ease 2.5s forwards;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.6s ease, visibility 0.6s ease;
+}
+
+#welcome-screen.fade-out {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
 }
 
 .welcome-content h1 {
@@ -61,6 +70,7 @@ img {
   color: #fefce8;
   text-align: center;
   animation: slideDown 1s ease;
+  padding: 1rem;
 }
 
 @keyframes slideDown {
@@ -68,13 +78,12 @@ img {
   to   { transform: translateY(0); opacity: 1; }
 }
 
-@keyframes fadeOut {
-  to {
-    opacity: 0;
-    visibility: hidden;
+@media (max-width: 600px) {
+  .welcome-content h1 {
+    font-size: 1.4rem;
+    padding: 0 1rem;
   }
 }
-
 
 /* Navbar */
 .navbar {
@@ -308,4 +317,5 @@ strong {
   transition: background 0.3s ease;
 }
 .whatsapp-float:hover {
-  backgro
+  background: #1ebe5d;
+}
