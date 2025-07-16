@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Muhammad Ridzuan Bin Darwin</title>
   <link rel="stylesheet" href="style.css" />
+  <!-- AOS Library -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 </head>
 <body>
   <nav class="navbar">
@@ -19,62 +22,62 @@
     </div>
   </nav>
 
-  <header>
+  <header data-aos="fade-down">
     <h1 class="gradient-text">Muhammad Ridzuan Bin Darwin</h1>
     <p>Future Educator | Tech Enthusiast | Forensics Learner</p>
   </header>
 
   <div class="container">
-    <img src="images/kucing1.jpg" alt="Profile" class="profile-img" />
+    <img src="images/kucing1.jpg" alt="Profile" class="profile-img" data-aos="zoom-in" />
 
-    <section id="about">
+    <section id="about" data-aos="fade-up">
       <h2>About Me</h2>
-      <p>Hello, I’m <strong>Muhammad Ridzuan Bin Darwin</strong>, a passionate and driven 20-year-old student currently pursuing a <strong>Diploma in Corporate Investigation</strong> at SMART College, Kampung Pandan. With a strong interest in education, technology, and digital forensics, I aim to become an educator who not only shares knowledge but also inspires critical thinking and lifelong learning.</p>
+      <p>Hello, I’m <strong>Muhammad Ridzuan Bin Darwin</strong>, a passionate and driven 20-year-old student currently pursuing a <strong>Diploma in Corporate Investigation</strong> at SMART College, Kampung Pandan. With a strong interest in education, technology, and digital forensics, I aim to become an educator who not only shares knowledge, but also inspires critical thinking and lifelong learning.</p>
       <p>I believe that education is the foundation of personal growth and societal progress. Through my journey in academia and personal development, I am dedicated to gathering valuable knowledge and practical experience to contribute back to the community in meaningful ways.</p>
     </section>
 
-    <section id="interests">
+    <section id="interests" data-aos="fade-right">
       <h2>Interests</h2>
       <p>My interests lie at the intersection of creativity, technology, and investigative thinking. These include:</p>
       <ul>
         <li><strong>Technology for evidence gathering</strong> – I am passionate about leveraging digital tools and platforms to collect, analyze, and present evidence effectively, especially in forensic and investigative contexts.</li>
-<li><strong>Graphic design & presentation</strong> – creating impactful visuals with Canva and PowerPoint.</li>
-<li><strong>Digital forensics</strong> – exploring how technology plays a role in uncovering the truth through evidence.</li>
-<li><strong>Education & mentoring</strong> – sharing knowledge, especially in IT and digital literacy.</li>
+        <li><strong>Graphic design & presentation</strong> – creating impactful visuals with Canva and PowerPoint.</li>
+        <li><strong>Digital forensics</strong> – exploring how technology plays a role in uncovering the truth through evidence.</li>
+        <li><strong>Education & mentoring</strong> – sharing knowledge, especially in IT and digital literacy.</li>
       </ul>
     </section>
 
-   <section id="skills">
-  <h2>Skills</h2>
-  <p>Here are some of my key skills, along with my proficiency levels:</p>
+    <section id="skills" data-aos="zoom-in">
+      <h2>Skills</h2>
+      <p>Here are some of my key skills, along with my proficiency levels:</p>
 
-  <div class="skill">
-    <span>Microsoft Office</span>
-    <div class="skill-bar"><div class="fill" style="width: 90%;">90%</div></div>
-  </div>
+      <div class="skill">
+        <span>Microsoft Office</span>
+        <div class="skill-bar"><div class="fill" style="width: 90%;">90%</div></div>
+      </div>
 
-  <div class="skill">
-    <span>Report Writing</span>
-    <div class="skill-bar"><div class="fill" style="width: 85%;">85%</div></div>
-  </div>
+      <div class="skill">
+        <span>Report Writing</span>
+        <div class="skill-bar"><div class="fill" style="width: 85%;">85%</div></div>
+      </div>
 
-  <div class="skill">
-    <span>Canva Design</span>
-    <div class="skill-bar"><div class="fill" style="width: 88%;">88%</div></div>
-  </div>
+      <div class="skill">
+        <span>Canva Design</span>
+        <div class="skill-bar"><div class="fill" style="width: 88%;">88%</div></div>
+      </div>
 
-  <div class="skill">
-    <span>HTML/CSS</span>
-    <div class="skill-bar"><div class="fill" style="width: 75%;">75%</div></div>
-  </div>
+      <div class="skill">
+        <span>HTML/CSS</span>
+        <div class="skill-bar"><div class="fill" style="width: 75%;">75%</div></div>
+      </div>
 
-  <div class="skill">
-    <span>Digital Forensics (Basic)</span>
-    <div class="skill-bar"><div class="fill" style="width: 60%;">60%</div></div>
-  </div>
-</section>
+      <div class="skill">
+        <span>Digital Forensics (Basic)</span>
+        <div class="skill-bar"><div class="fill" style="width: 60%;">60%</div></div>
+      </div>
+    </section>
 
-    <section id="contact">
+    <section id="contact" data-aos="fade-left">
       <h2>Contact</h2>
       <p>Feel free to reach out to me via email or phone. I'm always open to learning opportunities, collaborations, or simply connecting with like-minded individuals.</p>
       <div class="contact-info">
@@ -83,7 +86,7 @@
       </div>
     </section>
 
-    <a href="https://drive.google.com" class="btn" target="_blank">📄 View My Resume</a>
+    <a href="https://drive.google.com" class="btn" target="_blank" data-aos="fade-up">📄 View My Resume</a>
   </div>
 
   <script>
@@ -116,6 +119,12 @@
     }
 
     updateTitle();
+  </script>
+  <script>
+    AOS.init({
+      duration: 1000,
+      once: true
+    });
   </script>
 </body>
 </html>
