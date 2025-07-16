@@ -6,16 +6,10 @@
   <title>Muhammad Ridzuan Bin Darwin</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-
-  <!-- SEO Meta Tags -->
   <meta name="description" content="Personal website of Muhammad Ridzuan Bin Darwin – Future educator, tech enthusiast and forensics learner. View my profile, skills and contact info.">
   <meta name="keywords" content="Ridzuan, Portfolio, Corporate Investigation, SMART College, Forensics, HTML, Resume, Malaysia">
   <meta name="author" content="Muhammad Ridzuan Bin Darwin">
-
-  <!-- AOS -->
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 </head>
@@ -158,6 +152,28 @@
       spinner.style.visibility = "hidden";
       spinner.style.transition = "opacity 0.3s ease";
       setTimeout(() => spinner.remove(), 500);
+    });
+
+    // Highlight navbar link based on scroll position
+    window.addEventListener('scroll', () => {
+      const sections = document.querySelectorAll('section');
+      const navLinks = document.querySelectorAll('.nav-links a');
+      let current = '';
+
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 140;
+        const sectionHeight = section.clientHeight;
+        if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+          current = section.getAttribute('id');
+        }
+      });
+
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === `#${current}`) {
+          link.classList.add('active');
+        }
+      });
     });
   </script>
 </body>
