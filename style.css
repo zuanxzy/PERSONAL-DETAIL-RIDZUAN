@@ -1,11 +1,12 @@
 /* Professional style.css upgrade */
 
 body {
-  margin: 0;
-  font-family: 'Segoe UI', Arial, sans-serif;
-  background: linear-gradient(135deg, #001f4d 0%, #004080 100%);
-  color: #f8f9fa;
-  min-height: 100vh;
+body {
+  background: linear-gradient(
+    to right,
+    rgba(52, 152, 219, 1) 0%,
+    rgba(52, 152, 219, 0) 100%
+  );
 }
 
 header {
