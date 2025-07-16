@@ -20,8 +20,26 @@ header h1 {
   font-size: 2.7rem;
   letter-spacing: 2px;
   font-weight: 700;
-  color: #00aaff;
+  /* Remove old color property if you want to use gradient-text on h1 */
   text-shadow: 1px 2px 8px #00336622;
+}
+
+/* Animated Gradient Text Effect */
+.gradient-text {
+  background: linear-gradient(90deg, #00C9FF 0%, #92FE9D 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text; /* For Firefox */
+  color: transparent;
+  font-weight: bold;
+  animation: gradient-move 3s linear infinite;
+}
+
+@keyframes gradient-move {
+  to {
+    background-position: 200% center;
+  }
 }
 
 header p {
@@ -85,24 +103,7 @@ h2 {
   margin: 0.3rem 0;
 }
 
-.typewriter {
-  overflow: hidden;
-  border-right: 2px solid #fff;
-  white-space: nowrap;
-  letter-spacing: 2px;
-  animation: typing 2.5s steps(20, end), blink 0.75s step-end infinite;
-  max-width: 100%;
-}
-
-@keyframes typing {
-  from { width: 0 }
-  to { width: 100% }
-}
-
-@keyframes blink {
-  from, to { border-color: transparent }
-  50% { border-color: #fff }
-}
+/* Removed .typewriter and its keyframes */
 
 /* Responsive improvements */
 @media (max-width: 600px) {
