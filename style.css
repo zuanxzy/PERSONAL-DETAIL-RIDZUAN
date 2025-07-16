@@ -44,6 +44,37 @@ img {
 @keyframes spin {
   to { transform: rotate(360deg); }
 }
+/* Welcome Screen Animation */
+#welcome-screen {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(to right, #4f46e5, #7c3aed);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 99999;
+  animation: fadeOut 2s ease 2.5s forwards;
+}
+
+.welcome-content h1 {
+  font-size: 2rem;
+  color: #fefce8;
+  text-align: center;
+  animation: slideDown 1s ease;
+}
+
+@keyframes slideDown {
+  from { transform: translateY(-30px); opacity: 0; }
+  to   { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
 
 /* Navbar */
 .navbar {
