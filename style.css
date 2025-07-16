@@ -173,3 +173,37 @@ h2 {
     align-items: flex-start;
   }
 }
+/* === SKILLS BAR === */
+.skill {
+  margin-bottom: 1.2rem;
+}
+
+.skill span {
+  display: block;
+  margin-bottom: 0.3rem;
+  font-weight: 500;
+}
+
+.skill-bar {
+  background-color: #ccc;
+  border-radius: 6px;
+  overflow: hidden;
+  height: 24px;
+}
+
+.skill-bar .fill {
+  background: linear-gradient(to right, #00c6ff, #0072ff);
+  height: 100%;
+  color: #fff;
+  padding-left: 10px;
+  line-height: 24px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  animation: fillGrow 1.4s ease-out forwards;
+}
+
+@keyframes fillGrow {
+  0% {
+    width: 0;
+  }
+}
