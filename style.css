@@ -126,7 +126,7 @@ header {
   -webkit-text-fill-color: transparent;
 }
 
-/* === WAVE EFFECT === */
+/* === WAVE ANIMATION === */
 .wave-container {
   position: relative;
   width: 100%;
@@ -146,7 +146,6 @@ header {
 
 .wave path {
   fill: #001f3f;
-  opacity: 1;
 }
 
 @keyframes waveMove {
