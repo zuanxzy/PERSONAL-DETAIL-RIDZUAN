@@ -1,6 +1,5 @@
 /* === GLOBAL === */
 html, body {
-  scroll-behavior: smooth;
   overflow-x: hidden;
   width: 100%;
   max-width: 100%;
