@@ -126,6 +126,38 @@ header {
   -webkit-text-fill-color: transparent;
 }
 
+/* === WAVE EFFECT === */
+.wave-container {
+  position: relative;
+  width: 100%;
+  height: 80px;
+  overflow: hidden;
+  line-height: 0;
+  margin-top: -5px;
+}
+
+.wave {
+  position: relative;
+  display: block;
+  width: 200%;
+  height: 100%;
+  animation: waveMove 8s linear infinite;
+}
+
+.wave path {
+  fill: #001f3f;
+  opacity: 1;
+}
+
+@keyframes waveMove {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
 /* === CONTAINER === */
 .container {
   max-width: 900px;
