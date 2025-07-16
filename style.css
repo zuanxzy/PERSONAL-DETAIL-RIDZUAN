@@ -1,5 +1,7 @@
 /* style.css */
-
+html {
+  scroll-behavior: smooth;
+}
 /* RESET & BASE */
 * {
   margin: 0;
