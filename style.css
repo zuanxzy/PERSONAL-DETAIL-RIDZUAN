@@ -233,3 +233,12 @@ input:focus, textarea:focus {
     align-items: flex-start;
   }
 }
+.contact-info a {
+  color: #00c6ff; /* biru terang */
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.contact-info a:hover {
+  color: #ffcc00; /* tukar warna bila hover, boleh tukar ikut suka */
+}
