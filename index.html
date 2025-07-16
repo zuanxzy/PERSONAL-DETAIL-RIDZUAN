@@ -189,45 +189,43 @@
       });
     });
   </script>
-<!-- WhatsApp Floating Button -->
-<a href="https://wa.me/601123096167" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
-  <i class="fab fa-whatsapp"></i>
-</a>
+  <!-- WhatsApp Floating Button -->
+  <a href="https://wa.me/601123096167" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
 
-<!-- ✅ Your script goes here -->
-<script>
-  // Welcome screen - only show once per session
-  window.addEventListener("DOMContentLoaded", () => {
-    const welcomeScreen = document.getElementById("welcome-screen");
+  <!-- START: Your welcome & skill animation script -->
+  <script>
+    window.addEventListener("DOMContentLoaded", () => {
+      const welcomeScreen = document.getElementById("welcome-screen");
 
-    if (!sessionStorage.getItem("welcomeShown")) {
-      setTimeout(() => {
-        welcomeScreen.style.opacity = "0";
-        welcomeScreen.style.visibility = "hidden";
-        setTimeout(() => welcomeScreen.remove(), 500);
-      }, 2500);
-      sessionStorage.setItem("welcomeShown", "true");
-    } else {
-      welcomeScreen.style.display = "none"; // Skip animation if already shown
-    }
-  });
-
-  // Animate skill bar fill on scroll
-  window.addEventListener("scroll", () => {
-    document.querySelectorAll('.skill-bar').forEach(bar => {
-      const rect = bar.getBoundingClientRect();
-      if (rect.top < window.innerHeight && !bar.classList.contains('animate')) {
-        const fill = bar.querySelector('.fill');
-        const originalWidth = fill.style.width;
-        fill.style.width = "0";
+      if (!sessionStorage.getItem("welcomeShown")) {
         setTimeout(() => {
-          fill.style.width = originalWidth;
-        }, 100);
-        bar.classList.add('animate');
+          welcomeScreen.classList.add("fade-out");
+          setTimeout(() => welcomeScreen.remove(), 500); // buang elemen lepas animasi
+        }, 2500);
+        sessionStorage.setItem("welcomeShown", "true");
+      } else {
+        welcomeScreen.style.display = "none";
       }
     });
-  });
-</script>
+
+    window.addEventListener("scroll", () => {
+      document.querySelectorAll('.skill-bar').forEach(bar => {
+        const rect = bar.getBoundingClientRect();
+        if (rect.top < window.innerHeight && !bar.classList.contains('animate')) {
+          const fill = bar.querySelector('.fill');
+          const originalWidth = fill.style.width;
+          fill.style.width = "0";
+          setTimeout(() => {
+            fill.style.width = originalWidth;
+          }, 100);
+          bar.classList.add('animate');
+        }
+      });
+    });
+  </script>
+  <!-- END: Script -->
 
 </body>
 </html>
