@@ -1,140 +1,100 @@
-/* === Layout Fix: Prevent horizontal scroll on mobile === */
+<style>
+/* === General Reset & Fonts === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 html, body {
   max-width: 100vw;
   overflow-x: hidden;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(to bottom, #1e293b, #111827);
+  color: #e5e7eb;
+  scroll-behavior: smooth;
 }
 
-* {
-  box-sizing: border-box;
-}
-
+/* === Scrollbar === */
 body::-webkit-scrollbar {
   width: 0;
 }
 
-html, body {
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden;
-  width: 100vw;
-  font-family: 'Poppins', sans-serif;
-  background: linear-gradient(to bottom, #1e293b, #111827);
-  color: #e5e7eb;
+/* === Welcome Screen === */
+#welcome-screen {
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(to right, #4f46e5, #7c3aed);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99999;
+  transition: opacity 0.6s ease, visibility 0.6s ease;
+}
+#welcome-screen.fade-out {
+  opacity: 0;
+  visibility: hidden;
+}
+.welcome-content h1 {
+  font-size: 2rem;
+  color: #fefce8;
+  animation: slideDown 1s ease;
+}
+@keyframes slideDown {
+  from { transform: translateY(-30px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
 }
 
-/* Spinner */
+/* === Spinner === */
 #spinner-wrapper {
   position: fixed;
+  inset: 0;
   background: #111827;
-  top: 0; left: 0; right: 0; bottom: 0;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   z-index: 9999;
 }
 .spinner {
+  width: 50px;
+  height: 50px;
   border: 5px solid #374151;
   border-top: 5px solid #6366f1;
   border-radius: 50%;
-  width: 50px;
-  height: 50px;
   animation: spin 1s linear infinite;
 }
 @keyframes spin {
   to { transform: rotate(360deg); }
 }
 
-/* Welcome Screen */
-#welcome-screen {
-  position: fixed;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: linear-gradient(to right, #4f46e5, #7c3aed);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 99999;
-  opacity: 1;
-  visibility: visible;
-  transition: opacity 0.6s ease, visibility 0.6s ease;
-  overflow: hidden;
-  width: 100vw;
-  height: 100vh;
-  text-align: center;
-}
-#welcome-screen.fade-out {
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-}
-.welcome-content h1 {
-  font-size: 2rem;
-  color: #fefce8;
-  animation: slideDown 1s ease;
-  padding: 1rem;
-  margin: 0 auto;
-}
-@keyframes slideDown {
-  from { transform: translateY(-30px); opacity: 0; }
-  to   { transform: translateY(0); opacity: 1; }
-}
-@media (max-width: 600px) {
-  .welcome-content h1 {
-    font-size: 1.4rem;
-    padding: 0 1rem;
-  }
-}
-
-/* Hide welcome screen if already shown */
-body.map-open #welcome-screen {
-  display: none !important;
-  opacity: 0 !important;
-  visibility: hidden !important;
-  pointer-events: none !important;
-}
-
-/* Navbar */
+/* === Navbar === */
 .navbar {
   background: #0f172a;
   padding: 1rem;
   position: sticky;
   top: 0;
   z-index: 1000;
-  text-align: center;
 }
 .nav-container {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   max-width: 960px;
   margin: auto;
-  color: white;
-  max-width: 100%;
-  overflow-x: hidden;
-  flex-wrap: wrap;
 }
 .logo {
   font-size: 1.5rem;
-  font-weight: 600;
+  font-weight: bold;
+  color: white;
   text-decoration: none;
-  color: #fff;
-  margin: 0 1rem;
 }
 .nav-links {
   list-style: none;
   display: flex;
   gap: 1rem;
-  justify-content: center;
-  flex-wrap: wrap;
 }
 .nav-links a {
-  text-decoration: none;
   color: #e0e7ff;
+  text-decoration: none;
   font-weight: 500;
   position: relative;
 }
@@ -150,19 +110,19 @@ body.map-open #welcome-screen {
 }
 .menu-toggle {
   display: none;
+  color: white;
   font-size: 1.5rem;
   cursor: pointer;
 }
-
 @media (max-width: 768px) {
   .nav-links {
     flex-direction: column;
     display: none;
-    background: #0f172a;
     position: absolute;
-    right: 0;
     top: 60px;
+    right: 0;
     width: 100%;
+    background: #0f172a;
     text-align: center;
   }
   .nav-links.active {
@@ -170,32 +130,17 @@ body.map-open #welcome-screen {
   }
   .menu-toggle {
     display: block;
-    color: white;
   }
 }
 
+/* === Header === */
 header {
+  text-align: center;
   padding: 4rem 1rem;
   background: linear-gradient(to right, #4f46e5, #7c3aed);
   color: white;
   position: relative;
   overflow: hidden;
-  text-align: center;
-}
-header::before {
-  content: "";
-  position: absolute;
-  top: -100px;
-  left: -100px;
-  width: 300px;
-  height: 300px;
-  background: radial-gradient(circle, rgba(255,255,255,0.1), transparent);
-  border-radius: 50%;
-  animation: float 10s infinite ease-in-out;
-}
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(20px); }
 }
 .gradient-text {
   background: linear-gradient(45deg, #fcd34d, #f472b6);
@@ -203,37 +148,46 @@ header::before {
   -webkit-text-fill-color: transparent;
 }
 
+/* === Wave === */
 .wave-container {
-  overflow: hidden;
   line-height: 0;
+  overflow: hidden;
 }
 .wave {
   display: block;
   width: 100%;
   height: 60px;
-  max-width: 100vw;
-  overflow-x: hidden;
   fill: #1e293b;
 }
 
+/* === Container & Sections === */
 .container {
   max-width: 960px;
   margin: auto;
   padding: 2rem;
-  max-width: 100%;
-  overflow-x: hidden;
+}
+section {
+  margin-bottom: 3rem;
   text-align: center;
 }
+section h2 {
+  color: #93c5fd;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
 
+/* === Profile Image === */
 .profile-img {
   width: 160px;
   height: 160px;
-  object-fit: cover;
+  border-radius: 50%;
   border: 4px solid #6366f1;
+  object-fit: cover;
   margin: 2rem auto;
   display: block;
 }
 
+/* === Skill Bars === */
 .skill {
   margin-bottom: 1.2rem;
 }
@@ -250,47 +204,33 @@ header::before {
 .skill-bar .fill {
   background: #6366f1;
   height: 20px;
-  color: white;
   text-align: right;
   padding-right: 5px;
   line-height: 20px;
-  border-radius: 6px;
-  width: 0;
-  transition: all 0.5s ease;
-  background-size: 200% auto;
+  color: white;
+  transition: width 0.5s ease;
 }
-
 .skill-bar:hover .fill {
-  background-image: linear-gradient(
-    270deg,
-    #f43f5e,
-    #f97316,
-    #facc15,
-    #4ade80,
-    #38bdf8,
-    #a78bfa,
-    #f43f5e
-  );
+  background-image: linear-gradient(270deg, #f43f5e, #f97316, #facc15, #4ade80, #38bdf8, #a78bfa, #f43f5e);
   background-size: 300% 100%;
   animation: rainbowMove 2s linear infinite;
 }
-
 @keyframes rainbowMove {
   0% { background-position: 0% 50%; }
   100% { background-position: 100% 50%; }
 }
 
+/* === Buttons === */
 .btn {
   display: inline-block;
-  margin-top: 2rem;
   padding: 12px 24px;
+  margin-top: 2rem;
   background: #6366f1;
   color: white;
   text-decoration: none;
   border-radius: 10px;
   font-weight: 500;
   transition: background 0.3s ease;
-  text-align: center;
 }
 .btn:hover {
   background: #4f46e5;
@@ -299,24 +239,13 @@ header::before {
   background: #10b981;
 }
 
-.footer {
-  background: #0f172a;
-  color: #e5e7eb;
-  text-align: center;
-  padding: 1rem 0;
-  font-size: 0.9rem;
-}
-.footer a {
-  color: #a78bfa;
-  text-decoration: none;
-}
-
-.contact-info p, .contact-info a {
+/* === Contact & Footer === */
+.contact-info p,
+.contact-info a {
   margin: 0.5rem 0;
   color: #cbd5e1;
 }
 .social-icons a {
-  display: inline-block;
   margin-right: 1rem;
   color: #93c5fd;
   text-decoration: none;
@@ -324,20 +253,19 @@ header::before {
 .social-icons a:hover {
   color: #60a5fa;
 }
-
-section h2 {
-  font-size: 1.8rem;
-  margin-bottom: 1rem;
-  color: #93c5fd;
+.footer {
+  background: #0f172a;
+  color: #e5e7eb;
   text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
 }
-ul {
-  padding-left: 1.2rem;
-}
-strong {
-  color: #f3f4f6;
+.footer a {
+  color: #a78bfa;
+  text-decoration: none;
 }
 
+/* === WhatsApp Button === */
 .whatsapp-float {
   position: fixed;
   bottom: 20px;
@@ -354,3 +282,4 @@ strong {
 .whatsapp-float:hover {
   background: #1ebe5d;
 }
+</style>
