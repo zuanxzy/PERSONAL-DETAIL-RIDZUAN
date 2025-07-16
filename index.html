@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title class="typewriter">Muhammad Zuan Darwin</h1>
+  <title>Muhammad Zuan Darwin</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header>
-    <h1>Muhammad Zuan Darwin</h1>
+    <h1 class="typewriter">Muhammad Zuan Darwin</h1>
     <p>Future Educator | Tech Enthusiast | Forensics Learner</p>
   </header>
 
@@ -44,5 +44,21 @@
       </div>
     </section>
   </div>
+
+  <!-- Typewriter for browser tab -->
+  <script>
+    const text = "Muhammad Zuan Darwin";
+    let index = 0;
+
+    function typeTitle() {
+      if (index <= text.length) {
+        document.title = text.substring(0, index);
+        index++;
+        setTimeout(typeTitle, 150);
+      }
+    }
+
+    typeTitle();
+  </script>
 </body>
 </html>
