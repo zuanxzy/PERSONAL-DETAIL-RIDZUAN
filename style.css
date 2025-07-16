@@ -119,6 +119,12 @@ section {
   margin-bottom: 3rem;
 }
 
+section p,
+section ul,
+section li {
+  text-align: justify;
+}
+
 h2 {
   font-size: 1.8rem;
   border-left: 5px solid #00c6ff;
