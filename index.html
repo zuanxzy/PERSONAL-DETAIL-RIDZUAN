@@ -17,60 +17,40 @@
 
     <section>
       <h2>About Me</h2>
-      <p>I'm a 20-year-old student currently pursuing a Diploma in Corporate Investigation at SMART College Kampung Pandan. My goal is to gain as much knowledge as possible and pass it on to others through teaching.</p>
+      <p>I'm a 20-year-old student currently pursuing a Diploma in Corporate Investigation at SMART College Kampung Pandan. My goal is to gain as much knowledge as possible and pass it on to others through education and sharing. I am passionate about technology and eager to make a positive impact.</p>
     </section>
 
-    <section>
-      <h2>Interests</h2>
-      <p>Video editing, design, IT forensics, education</p>
-    </section>
-
-    <section>
-      <h2>Skills</h2>
-      <ul>
-        <li>Microsoft Office</li>
-        <li>Report Writing</li>
-        <li>Canva</li>
-        <li>HTML/CSS</li>
-        <li>Basic Computer Forensics</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>Contact</h2>
-      <div class="contact-info">
-        <p>Email: <a href="mailto:Ridzuan245z@gmail.com">Ridzuan245z@gmail.com</a></p>
-        <a href="tel:01123096167">011-23096167</a>
-      </div>
-    </section>
+    <!-- ...rest of your content... -->
   </div>
 
-<script>
-  const text = "Muhammad Ridzuan Bin Darwin";
-  let index = 0;
-  let direction = 1; // 1 for typing, -1 for deleting
-  let delay = 120;
+  <!-- Typewriter for browser tab -->
+  <script>
+    const text = "Muhammad Ridzuan Bin Darwin";
+    let index = 0;
+    let direction = 1;
+    let delay = 120;
 
-  function updateTitle() {
-    document.title = text.substring(0, index);
+    function updateTitle() {
+      document.title = text.substring(0, index);
 
-    if (direction === 1 && index < text.length) {
-      index++;
-    } else if (direction === 1 && index === text.length) {
-      direction = -1;
-      delay = 900; // Pause at full text
-    } else if (direction === -1 && index > 0) {
-      index--;
-    } else if (direction === -1 && index === 0) {
-      direction = 1;
-      delay = 500; // Pause at empty
+      if (direction === 1 && index < text.length) {
+        index++;
+      } else if (direction === 1 && index === text.length) {
+        direction = -1;
+        delay = 900;
+      } else if (direction === -1 && index > 0) {
+        index--;
+      } else if (direction === -1 && index === 0) {
+        direction = 1;
+        delay = 500;
+      }
+
+      setTimeout(updateTitle, delay);
+      delay = 120;
     }
-
-    setTimeout(updateTitle, delay);
-    delay = 120; // Reset delay after pauses
-  }
-
-  updateTitle();
-</script>
+    updateTitle();
+  </script>
+</body>
+</html>
 </body>
 </html>
