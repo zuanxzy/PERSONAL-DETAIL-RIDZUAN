@@ -1,13 +1,12 @@
-/* Improved style.css for a professional, modern portfolio website - Centered Layout */
+/* Dark, Professional & Centered Portfolio Style */
 
 :root {
-  --primary-color: #007bff;
-  --secondary-color: #6c757d;
-  --accent-color: #17a2b8;
-  --bg-color: #f8f9fa;
-  --text-color: #212529;
-  --heading-color: #343a40;
-  --highlight-color: #ffc107;
+  --primary-color: #6366f1;
+  --accent-color: #14b8a6;
+  --text-light: #e5e7eb;
+  --bg-dark: #0f172a;
+  --bg-deep: #111827;
+  --highlight: #facc15;
   --font-main: 'Poppins', sans-serif;
 }
 
@@ -19,9 +18,9 @@
 
 body {
   font-family: var(--font-main);
-  background-color: var(--bg-color);
-  color: var(--text-color);
-  line-height: 1.6;
+  background: linear-gradient(to bottom, var(--bg-dark), var(--bg-deep));
+  color: var(--text-light);
+  line-height: 1.7;
   overflow-x: hidden;
   text-align: center;
   display: flex;
@@ -30,18 +29,18 @@ body {
 }
 
 h1, h2 {
-  color: var(--heading-color);
+  color: var(--highlight);
   margin-bottom: 1rem;
 }
 
 h1.gradient-text {
-  background: linear-gradient(90deg, #007bff, #17a2b8);
+  background: linear-gradient(45deg, var(--highlight), var(--primary-color));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 header {
-  padding: 3rem 1rem;
+  padding: 4rem 1rem;
   width: 100%;
 }
 
@@ -56,8 +55,7 @@ section {
 }
 
 .navbar {
-  background-color: white;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  background-color: #1e293b;
   padding: 1rem;
   position: sticky;
   top: 0;
@@ -77,7 +75,7 @@ section {
 .logo {
   font-weight: bold;
   font-size: 1.5rem;
-  color: var(--primary-color);
+  color: var(--highlight);
   text-decoration: none;
 }
 
@@ -89,14 +87,14 @@ section {
 
 .nav-links a {
   text-decoration: none;
-  color: var(--text-color);
+  color: var(--text-light);
   font-weight: 500;
   transition: color 0.3s ease;
 }
 
 .nav-links a:hover,
 .nav-links a.active {
-  color: var(--primary-color);
+  color: var(--accent-color);
 }
 
 .menu-toggle {
@@ -104,10 +102,11 @@ section {
 }
 
 .profile-img {
-  max-width: 200px;
+  max-width: 180px;
   border-radius: 50%;
   margin-bottom: 2rem;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  border: 4px solid var(--primary-color);
 }
 
 ul {
@@ -124,26 +123,27 @@ ul li {
 }
 
 .skill-bar {
-  background: #e0e0e0;
+  background: #334155;
   border-radius: 50px;
   overflow: hidden;
-  height: 25px;
+  height: 24px;
 }
 
 .skill-bar .fill {
   height: 100%;
-  line-height: 25px;
+  line-height: 24px;
   color: white;
-  background: linear-gradient(90deg, #007bff, #17a2b8);
+  background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
   text-align: right;
   padding-right: 10px;
   transition: width 1s ease-out;
+  border-radius: 50px;
 }
 
 .btn {
   display: inline-block;
   padding: 0.6rem 1.4rem;
-  background-color: var(--primary-color);
+  background-color: var(--accent-color);
   color: white;
   border-radius: 30px;
   text-decoration: none;
@@ -153,14 +153,15 @@ ul li {
 }
 
 .btn:hover {
-  background-color: #0056b3;
+  background-color: #0d9488;
 }
 
 .footer {
   padding: 2rem 1rem;
-  background-color: #f1f1f1;
+  background-color: #1e293b;
   font-size: 0.9rem;
   width: 100%;
+  color: var(--text-light);
 }
 
 .footer a {
@@ -198,12 +199,13 @@ ul li {
   position: fixed;
   top: 0; left: 0;
   width: 100%; height: 100%;
-  background: #fff;
+  background: var(--bg-deep);
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 2000;
   transition: opacity 0.5s;
+  color: var(--text-light);
 }
 
 #welcome-screen.fade-out {
@@ -212,7 +214,7 @@ ul li {
 }
 
 .spinner {
-  border: 6px solid #f3f3f3;
+  border: 6px solid #1e293b;
   border-top: 6px solid var(--primary-color);
   border-radius: 50%;
   width: 40px;
@@ -238,5 +240,5 @@ ul li {
   display: block;
   width: 100%;
   height: 60px;
-  fill: var(--bg-color);
+  fill: var(--bg-dark);
 }
