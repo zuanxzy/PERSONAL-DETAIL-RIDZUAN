@@ -130,14 +130,23 @@
     });
   </script>
 
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const toggleBtn = document.getElementById('menu-toggle');
-      const navLinks = document.getElementById('nav-links');
-      toggleBtn.addEventListener('click', () => {
-        navLinks.classList.toggle('active');
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const toggleBtn = document.getElementById('menu-toggle');
+    const navLinks = document.getElementById('nav-links');
+    const navItems = document.querySelectorAll('#nav-links a');
+
+    toggleBtn.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+
+    navItems.forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
       });
     });
-  </script>
+  });
+</script>
+
 </body>
 </html>
