@@ -196,6 +196,13 @@ header::before {
   padding: 2rem;
   max-width: 100%;
   overflow-x: hidden;
+  text-align: justify;
+}
+.container section,
+.container .btn {
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* Profile Image */
@@ -248,6 +255,7 @@ header::before {
   border-radius: 10px;
   font-weight: 500;
   transition: background 0.3s ease;
+  text-align: center;
 }
 .btn:hover {
   background: #4f46e5;
@@ -314,3 +322,4 @@ strong {
 .whatsapp-float:hover {
   background: #1ebe5d;
 }
+
