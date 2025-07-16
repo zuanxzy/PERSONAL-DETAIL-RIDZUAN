@@ -5,16 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Muhammad Ridzuan Bin Darwin</title>
   <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <meta name="description" content="Personal website of Muhammad Ridzuan Bin Darwin – Future educator, tech enthusiast and forensics learner. View my profile, skills and contact info.">
   <meta name="keywords" content="Ridzuan, Portfolio, Corporate Investigation, SMART College, Forensics, HTML, Resume, Malaysia">
   <meta name="author" content="Muhammad Ridzuan Bin Darwin">
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <link rel="icon" href="images/favicon.png" type="image/png">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-  <!-- Loading Spinner -->
   <div id="spinner-wrapper"><div class="spinner"></div></div>
 
   <nav class="navbar">
@@ -33,9 +33,9 @@
   <header data-aos="fade-down">
     <h1 class="gradient-text">Muhammad Ridzuan Bin Darwin</h1>
     <p>Future Educator | Tech Enthusiast | Forensics Learner</p>
+    <a href="#contact" class="btn highlight">📬 Let's Connect</a>
   </header>
 
-  <!-- Animated Wave -->
   <div class="wave-container">
     <svg class="wave" viewBox="0 0 1200 120" preserveAspectRatio="none">
       <path d="M0,40 C300,120 900,0 1200,80 L1200,120 L0,120 Z"></path>
@@ -43,7 +43,7 @@
   </div>
 
   <div class="container">
-    <img src="images/kucing1.jpg" alt="Profile" class="profile-img" data-aos="zoom-in" />
+    <img src="images/kucing1.jpg" alt="Profile" class="profile-img" loading="lazy" data-aos="zoom-in" />
 
     <section id="about" data-aos="fade-up">
       <h2>About Me</h2>
@@ -161,7 +161,6 @@
       setTimeout(() => spinner.remove(), 500);
     });
 
-    // Highlight navbar link based on scroll position
     window.addEventListener('scroll', () => {
       const sections = document.querySelectorAll('section');
       const navLinks = document.querySelectorAll('.nav-links a');
