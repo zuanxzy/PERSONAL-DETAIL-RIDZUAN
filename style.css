@@ -278,4 +278,8 @@ h2 {
     align-items: flex-start;
   }
 }
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
 
