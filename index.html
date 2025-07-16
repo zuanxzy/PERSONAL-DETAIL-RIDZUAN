@@ -4,24 +4,23 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Muhammad Ridzuan Bin Darwin</title>
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">  
   <link rel="stylesheet" href="style.css" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
   <!-- SEO Meta Tags -->
   <meta name="description" content="Personal website of Muhammad Ridzuan Bin Darwin – Future educator, tech enthusiast and forensics learner. View my profile, skills and contact info.">
   <meta name="keywords" content="Ridzuan, Portfolio, Corporate Investigation, SMART College, Forensics, HTML, Resume, Malaysia">
   <meta name="author" content="Muhammad Ridzuan Bin Darwin">
 
-  <!-- AOS Library -->
+  <!-- AOS -->
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 </head>
 <body>
   <!-- Loading Spinner -->
-  <div id="spinner-wrapper">
-    <div class="spinner"></div>
-  </div>
+  <div id="spinner-wrapper"><div class="spinner"></div></div>
 
   <nav class="navbar">
     <div class="nav-container">
@@ -45,51 +44,48 @@
     <img src="images/kucing1.jpg" alt="Profile" class="profile-img" data-aos="zoom-in" />
 
     <section id="about" data-aos="fade-up">
-      <h2>About Me</h2>
-      <p>Hi! I’m <strong>Muhammad Ridzuan Bin Darwin</strong>, a 20-year-old student pursuing a <strong>Diploma in Corporate Investigation</strong> at SMART College.</p>
-      <p>I'm passionate about education, digital forensics, and technology. My goal is to become an educator who inspires critical thinking and lifelong learning.</p>
-      <p>To me, knowledge isn’t just power—it’s a responsibility to give back and create change.</p>
+      <h2><i class="fas fa-user"></i> About Me</h2>
+      <p>Hi! I'm <strong>Muhammad Ridzuan Bin Darwin</strong>, a 20-year-old student currently pursuing a <strong>Diploma in Corporate Investigation</strong> at SMART College, Kampung Pandan.</p>
+      <p>I'm passionate about education, technology, and digital forensics. My goal is to become an educator who inspires curiosity, critical thinking, and lifelong learning.</p>
     </section>
 
     <section id="interests" data-aos="fade-right">
-      <h2>Interests</h2>
-      <p>My interests lie at the intersection of creativity, technology, and investigative thinking. These include:</p>
+      <h2><i class="fas fa-lightbulb"></i> Interests</h2>
       <ul>
-        <li><strong>Technology for evidence gathering</strong> – I am passionate about leveraging digital tools and platforms to collect, analyze, and present evidence effectively, especially in forensic and investigative contexts.</li>
-        <li><strong>Graphic design & presentation</strong> – creating impactful visuals with Canva and PowerPoint.</li>
-        <li><strong>Digital forensics</strong> – exploring how technology plays a role in uncovering the truth through evidence.</li>
-        <li><strong>Education & mentoring</strong> – sharing knowledge, especially in IT and digital literacy.</li>
+        <li><i class="fas fa-microscope"></i> <strong>Technology & Evidence</strong> – Using digital tools to collect and analyze data.</li>
+        <li><i class="fas fa-paint-brush"></i> <strong>Design & Presentation</strong> – Visual creation using Canva & PowerPoint.</li>
+        <li><i class="fas fa-fingerprint"></i> <strong>Digital Forensics</strong> – Discovering truth through tech-based investigation.</li>
+        <li><i class="fas fa-chalkboard-teacher"></i> <strong>Education</strong> – Sharing IT and forensic knowledge with others.</li>
       </ul>
     </section>
 
     <section id="skills" data-aos="zoom-in">
-      <h2>Skills</h2>
-      <p>Here are some of my key skills, along with my proficiency levels:</p>
+      <h2><i class="fas fa-chart-bar"></i> Skills</h2>
       <div class="skill">
-        <span>Microsoft Office</span>
+        <span><i class="fab fa-microsoft"></i> Microsoft Office</span>
         <div class="skill-bar"><div class="fill" style="width: 90%;">90%</div></div>
       </div>
       <div class="skill">
-        <span>Report Writing</span>
+        <span><i class="fas fa-file-alt"></i> Report Writing</span>
         <div class="skill-bar"><div class="fill" style="width: 85%;">85%</div></div>
       </div>
       <div class="skill">
-        <span>Canva Design</span>
+        <span><i class="fas fa-palette"></i> Canva Design</span>
         <div class="skill-bar"><div class="fill" style="width: 88%;">88%</div></div>
       </div>
       <div class="skill">
-        <span>HTML/CSS</span>
+        <span><i class="fab fa-html5"></i> HTML/CSS</span>
         <div class="skill-bar"><div class="fill" style="width: 75%;">75%</div></div>
       </div>
       <div class="skill">
-        <span>Digital Forensics (Basic)</span>
+        <span><i class="fas fa-bug"></i> Digital Forensics (Basic)</span>
         <div class="skill-bar"><div class="fill" style="width: 60%;">60%</div></div>
       </div>
     </section>
 
     <section id="contact" data-aos="fade-left">
-      <h2>Contact</h2>
-      <p>Feel free to reach out to me via email or phone. I'm always open to learning opportunities, collaborations, or simply connecting with like-minded individuals.</p>
+      <h2><i class="fas fa-envelope"></i> Contact</h2>
+      <p>Feel free to reach out via email or phone. I'm open to collaboration, learning, or networking.</p>
       <div class="contact-info">
         <p>Email: <a href="mailto:Ridzuan245z@gmail.com">Ridzuan245z@gmail.com</a></p>
         <p>Phone: <a href="tel:01123096167">011-23096167</a></p>
@@ -104,7 +100,7 @@
   </footer>
 
   <script>
-    // Typing animation for tab title
+    // Title typing animation
     const text = "Muhammad Ridzuan Bin Darwin";
     let index = 0;
     let typing = true;
@@ -131,7 +127,6 @@
     }
     updateTitle();
 
-    // AOS init
     AOS.init({ duration: 1000, once: true });
 
     // Mobile nav toggle
@@ -151,7 +146,7 @@
       });
     });
 
-    // Loading spinner
+    // Spinner
     window.addEventListener("load", function () {
       const spinner = document.getElementById("spinner-wrapper");
       spinner.style.opacity = "0";
