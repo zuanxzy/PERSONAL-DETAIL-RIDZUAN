@@ -282,4 +282,14 @@ html, body {
   max-width: 100%;
   overflow-x: hidden;
 }
+/* === Hide Scrollbar (Visible Scroll Tapi Tanpa Bar) === */
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+  -ms-overflow-style: none;  /* IE/Edge */
+  scrollbar-width: none;     /* Firefox */
+}
 
+body::-webkit-scrollbar {
+  display: none;             /* Chrome, Safari, Opera */
+}
