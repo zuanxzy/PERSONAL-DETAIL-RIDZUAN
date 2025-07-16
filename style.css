@@ -2,7 +2,7 @@
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
-  background: linear-gradient(to bottom, #1e293b, #111827);
+  background: linear-gradient(to bottom right, #0f172a, #1e293b);
   color: #e5e7eb;
 }
 
@@ -24,7 +24,7 @@ img {
 /* Spinner */
 #spinner-wrapper {
   position: fixed;
-  background: #111827;
+  background: #0f172a;
   top: 0; left: 0; right: 0; bottom: 0;
   display: flex;
   align-items: center;
@@ -32,8 +32,8 @@ img {
   z-index: 9999;
 }
 .spinner {
-  border: 5px solid #374151;
-  border-top: 5px solid #6366f1;
+  border: 5px solid #334155;
+  border-top: 5px solid #38bdf8;
   border-radius: 50%;
   width: 50px;
   height: 50px;
@@ -46,7 +46,7 @@ img {
 
 /* Navbar */
 .navbar {
-  background: #0f172a;
+  background: linear-gradient(to right, #0f172a, #1e293b);
   padding: 1rem;
   position: sticky;
   top: 0;
@@ -85,7 +85,7 @@ img {
   left: 0;
   width: 100%;
   height: 2px;
-  background: #6366f1;
+  background: #38bdf8;
 }
 .menu-toggle {
   display: none;
@@ -93,7 +93,6 @@ img {
   cursor: pointer;
 }
 
-/* Responsive nav */
 @media (max-width: 768px) {
   .nav-links {
     flex-direction: column;
@@ -118,7 +117,7 @@ img {
 header {
   text-align: center;
   padding: 4rem 1rem;
-  background: linear-gradient(to right, #4f46e5, #7c3aed);
+  background: linear-gradient(to right, #1e40af, #6366f1);
   color: white;
 }
 .gradient-text {
@@ -143,7 +142,7 @@ header {
   width: 160px;
   height: 160px;
   object-fit: cover;
-  border: 4px solid #6366f1;
+  border: 4px solid #38bdf8;
   margin: 2rem auto;
   display: block;
 }
@@ -163,7 +162,7 @@ header {
   overflow: hidden;
 }
 .skill-bar .fill {
-  background: #6366f1;
+  background: linear-gradient(to right, #38bdf8, #6366f1);
   height: 20px;
   color: white;
   text-align: right;
@@ -177,23 +176,23 @@ header {
   display: inline-block;
   margin-top: 2rem;
   padding: 12px 24px;
-  background: #6366f1;
+  background: linear-gradient(to right, #38bdf8, #6366f1);
   color: white;
   text-decoration: none;
   border-radius: 10px;
   font-weight: 500;
-  transition: background 0.3s ease;
+  transition: filter 0.3s ease;
 }
 .btn:hover {
-  background: #4f46e5;
+  filter: brightness(1.1);
 }
 .btn.highlight {
-  background: #10b981;
+  background: linear-gradient(to right, #10b981, #22d3ee);
 }
 
 /* Footer */
 .footer {
-  background: #0f172a;
+  background: linear-gradient(to right, #0f172a, #1e293b);
   color: #e5e7eb;
   text-align: center;
   padding: 1rem 0;
@@ -212,7 +211,7 @@ header {
 .social-icons a {
   display: inline-block;
   margin-right: 1rem;
-  color: #93c5fd;
+  color: #38bdf8;
   text-decoration: none;
 }
 .social-icons a:hover {
@@ -223,7 +222,7 @@ header {
 section h2 {
   font-size: 1.8rem;
   margin-bottom: 1rem;
-  color: #93c5fd;
+  color: #7dd3fc;
 }
 
 ul {
