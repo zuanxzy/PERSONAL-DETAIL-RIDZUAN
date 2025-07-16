@@ -2,8 +2,8 @@
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
-  background: linear-gradient(to bottom, #f4f7ff, #eef2ff);
-  color: #333;
+  background: linear-gradient(to bottom, #1e293b, #111827);
+  color: #e5e7eb;
 }
 
 h1, h2, h3 {
@@ -24,7 +24,7 @@ img {
 /* Spinner */
 #spinner-wrapper {
   position: fixed;
-  background: white;
+  background: #111827;
   top: 0; left: 0; right: 0; bottom: 0;
   display: flex;
   align-items: center;
@@ -32,7 +32,7 @@ img {
   z-index: 9999;
 }
 .spinner {
-  border: 5px solid #ccc;
+  border: 5px solid #374151;
   border-top: 5px solid #6366f1;
   border-radius: 50%;
   width: 50px;
@@ -46,7 +46,7 @@ img {
 
 /* Navbar */
 .navbar {
-  background: #1f2937;
+  background: #0f172a;
   padding: 1rem;
   position: sticky;
   top: 0;
@@ -73,7 +73,7 @@ img {
 }
 .nav-links a {
   text-decoration: none;
-  color: #fff;
+  color: #e0e7ff;
   font-weight: 500;
   position: relative;
 }
@@ -98,7 +98,7 @@ img {
   .nav-links {
     flex-direction: column;
     display: none;
-    background: #1f2937;
+    background: #0f172a;
     position: absolute;
     right: 0;
     top: 60px;
@@ -118,7 +118,7 @@ img {
 header {
   text-align: center;
   padding: 4rem 1rem;
-  background: linear-gradient(to right, #6366f1, #8b5cf6);
+  background: linear-gradient(to right, #4f46e5, #7c3aed);
   color: white;
 }
 .gradient-text {
@@ -136,7 +136,7 @@ header {
   display: block;
   width: 100%;
   height: 60px;
-  fill: #fff;
+  fill: #1e293b;
 }
 
 .profile-img {
@@ -158,7 +158,7 @@ header {
   font-weight: 500;
 }
 .skill-bar {
-  background: #ddd;
+  background: #334155;
   border-radius: 6px;
   overflow: hidden;
 }
@@ -193,8 +193,8 @@ header {
 
 /* Footer */
 .footer {
-  background: #1f2937;
-  color: #eee;
+  background: #0f172a;
+  color: #e5e7eb;
   text-align: center;
   padding: 1rem 0;
   font-size: 0.9rem;
@@ -207,23 +207,23 @@ header {
 /* Contact section */
 .contact-info p, .contact-info a {
   margin: 0.5rem 0;
-  color: #333;
+  color: #cbd5e1;
 }
 .social-icons a {
   display: inline-block;
   margin-right: 1rem;
-  color: #6366f1;
+  color: #93c5fd;
   text-decoration: none;
 }
 .social-icons a:hover {
-  color: #4f46e5;
+  color: #60a5fa;
 }
 
 /* Section Headings */
 section h2 {
   font-size: 1.8rem;
   margin-bottom: 1rem;
-  color: #4f46e5;
+  color: #93c5fd;
 }
 
 ul {
@@ -231,6 +231,5 @@ ul {
 }
 
 strong {
-  color: #111827;
+  color: #f3f4f6;
 }
-
