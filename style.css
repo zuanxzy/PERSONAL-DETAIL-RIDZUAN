@@ -329,3 +329,14 @@ body.loading {
 body.loading *:not(#spinner-wrapper):not(#welcome-screen) {
   visibility: hidden;
 }
+/* === Glassmorphism Section Design === */
+.glass-section {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.3);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  padding: 2rem;
+  margin: 2rem 0;
+}
