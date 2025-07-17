@@ -350,3 +350,26 @@ body.loading {
 body.loading *:not(#spinner-wrapper):not(#welcome-screen) {
   visibility: hidden;
 }
+/* === UX & Visual Enhancements === */
+
+/* 1. Hover effect on sections */
+.container section:hover {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 10px;
+  transition: background 0.3s ease, transform 0.3s ease;
+  transform: translateY(-4px);
+}
+
+/* 2. Profile picture glow on hover */
+.profile-img:hover {
+  box-shadow: 0 0 25px #6366f1;
+  transition: box-shadow 0.4s ease;
+}
+
+/* 3. Icon animation on social links */
+.social-icons a i {
+  transition: transform 0.3s ease;
+}
+.social-icons a i:hover {
+  transform: scale(1.2) rotate(5deg);
+}
