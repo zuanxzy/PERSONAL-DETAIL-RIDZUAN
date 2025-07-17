@@ -164,18 +164,18 @@
       });
     });
   });
+window.addEventListener("load", function () {
+  const spinner = document.getElementById("spinner-wrapper");
+  spinner.style.opacity = "0";
+  spinner.style.visibility = "hidden";
+  spinner.style.transition = "opacity 0.3s ease";
 
-  window.addEventListener("load", function () {
-    const spinner = document.getElementById("spinner-wrapper");
-    spinner.style.opacity = "0";
-    spinner.style.visibility = "hidden";
-    spinner.style.transition = "opacity 0.3s ease";
-    setTimeout(() => {
-      spinner.remove();
-      window.scrollTo({ top: 0, behavior: "auto" });
-    }, 500);
-  });
-
+  setTimeout(() => {
+    spinner.remove();
+    document.body.classList.remove("loading"); // Show the whole site now
+    window.scrollTo({ top: 0, behavior: "auto" });
+  }, 500);
+});
   window.addEventListener('scroll', () => {
     const sections = document.querySelectorAll('section');
     const navLinks = document.querySelectorAll('.nav-links a');
@@ -188,7 +188,6 @@
         current = section.getAttribute('id');
       }
     });
-
     navLinks.forEach(link => {
       link.classList.remove('active');
       if (link.getAttribute('href') === `#${current}`) {
@@ -196,7 +195,6 @@
       }
     });
   });
-
   window.addEventListener("DOMContentLoaded", () => {
     const welcomeScreen = document.getElementById("welcome-screen");
     if (!sessionStorage.getItem("welcomeShown")) {
@@ -209,7 +207,6 @@
       welcomeScreen.style.display = "none";
     }
   });
-
   window.addEventListener("scroll", () => {
     document.querySelectorAll('.skill-bar').forEach(bar => {
       const rect = bar.getBoundingClientRect();
