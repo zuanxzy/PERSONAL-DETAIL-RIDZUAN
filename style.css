@@ -46,6 +46,9 @@ html, body {
   opacity: 1;
   visibility: visible;
   transition: opacity 0.6s ease, visibility 0.6s ease;
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
 }
 #welcome-screen.fade-out {
   opacity: 0;
@@ -104,7 +107,6 @@ html, body {
   color: #e0e7ff;
   font-weight: 500;
   position: relative;
-  transition: color 0.3s ease;
 }
 .nav-links a.active::after,
 .nav-links a:hover::after {
@@ -121,6 +123,8 @@ html, body {
   font-size: 1.5rem;
   cursor: pointer;
 }
+
+/* Responsive nav */
 @media (max-width: 768px) {
   .nav-links {
     flex-direction: column;
@@ -149,12 +153,6 @@ header {
   color: white;
   position: relative;
   overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-header > * {
-  margin-bottom: 1rem;
 }
 header::before {
   content: "";
@@ -217,7 +215,6 @@ header::before {
   border: 4px solid #6366f1;
   margin: 2rem auto;
   display: block;
-  border-radius: 50%;
 }
 
 /* Skills */
@@ -238,6 +235,7 @@ header::before {
   background: linear-gradient(270deg, #4f46e5, #6366f1, #7c3aed, #4f46e5);
   background-size: 600% 600%;
   animation: gradientMove 5s ease infinite;
+  
   height: 20px;
   color: white;
   text-align: right;
@@ -250,11 +248,6 @@ header::before {
 .skill-bar.animate .fill {
   width: var(--skill-width);
 }
-@keyframes gradientMove {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
 
 /* Button */
 .btn {
@@ -266,7 +259,7 @@ header::before {
   text-decoration: none;
   border-radius: 10px;
   font-weight: 500;
-  transition: background 0.3s ease, box-shadow 0.3s ease;
+  transition: background 0.3s ease;
   text-align: center;
   max-width: fit-content;
 }
@@ -275,10 +268,6 @@ header::before {
 }
 .btn.highlight {
   background: #10b981;
-}
-.btn.highlight:hover {
-  background: #059669;
-  box-shadow: 0 0 15px #10b981, 0 0 30px #10b981, 0 0 45px #10b981;
 }
 
 /* Footer */
@@ -295,8 +284,7 @@ header::before {
 }
 
 /* Contact */
-.contact-info p,
-.contact-info a {
+.contact-info p, .contact-info a {
   margin: 0.5rem 0;
   color: #cbd5e1;
 }
@@ -341,12 +329,46 @@ strong {
 .whatsapp-float:hover {
   background: #1ebe5d;
 }
+/* Center the content inside the header */
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-/* Hide page during loading */
+/* Optional: give a small gap between elements */
+header > * {
+  margin-bottom: 1rem;
+}
+.btn.highlight:hover {
+  background: #059669;
+  box-shadow: 0 0 15px #10b981, 0 0 30px #10b981, 0 0 45px #10b981;
+  transition: all 0.3s ease;
+}
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+  body.loading {
+  overflow: hidden;
+  height: 100vh;
+}
+
+body.loading *:not(#spinner-wrapper) {
+  visibility: hidden;
+}
+/* === Hide content while loading spinner is active === */
 body.loading {
   overflow: hidden;
   height: 100vh;
 }
+
 body.loading *:not(#spinner-wrapper):not(#welcome-screen) {
   visibility: hidden;
 }
