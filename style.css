@@ -337,3 +337,8 @@ header {
 header > * {
   margin-bottom: 1rem;
 }
+.btn.highlight:hover {
+  background: #059669;
+  box-shadow: 0 0 15px #10b981, 0 0 30px #10b981, 0 0 45px #10b981;
+  transition: all 0.3s ease;
+}
