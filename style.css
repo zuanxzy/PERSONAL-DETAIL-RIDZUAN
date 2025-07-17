@@ -232,7 +232,10 @@ header::before {
   overflow: hidden;
 }
 .skill-bar .fill {
-  background: linear-gradient(90deg, #4f46e5, #6366f1, #7c3aed);
+  background: linear-gradient(270deg, #4f46e5, #6366f1, #7c3aed, #4f46e5);
+  background-size: 600% 600%;
+  animation: gradientMove 5s ease infinite;
+  
   height: 20px;
   color: white;
   text-align: right;
@@ -341,4 +344,15 @@ header > * {
   background: #059669;
   box-shadow: 0 0 15px #10b981, 0 0 30px #10b981, 0 0 45px #10b981;
   transition: all 0.3s ease;
+}
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
