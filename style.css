@@ -363,3 +363,12 @@ header > * {
 body.loading *:not(#spinner-wrapper) {
   visibility: hidden;
 }
+/* === Hide content while loading spinner is active === */
+body.loading {
+  overflow: hidden;
+  height: 100vh;
+}
+
+body.loading *:not(#spinner-wrapper):not(#welcome-screen) {
+  visibility: hidden;
+}
