@@ -1,24 +1,21 @@
-/* === Reset & Base === */
+/* === Base Layout Fix === */
 * {
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
 }
 html, body {
-  width: 100%;
-  height: 100%;
+  margin: 0;
+  padding: 0;
   overflow-x: hidden;
   font-family: 'Poppins', sans-serif;
   background: linear-gradient(to bottom, #1e293b, #111827);
   color: #e5e7eb;
-  scroll-behavior: smooth;
 }
 
 /* === Spinner === */
 #spinner-wrapper {
   position: fixed;
-  top: 0; left: 0; right: 0; bottom: 0;
   background: #111827;
+  top: 0; left: 0; right: 0; bottom: 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -39,12 +36,14 @@ html, body {
 /* === Welcome Screen === */
 #welcome-screen {
   position: fixed;
-  inset: 0;
+  top: 0; left: 0; right: 0; bottom: 0;
   background: linear-gradient(to right, #4f46e5, #7c3aed);
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 99999;
+  opacity: 1;
+  visibility: visible;
   transition: opacity 0.6s ease, visibility 0.6s ease;
 }
 #welcome-screen.fade-out {
@@ -55,13 +54,19 @@ html, body {
 .welcome-content h1 {
   font-size: 2rem;
   color: #fefce8;
+  text-align: center;
   animation: slideDown 1s ease;
   padding: 1rem;
-  text-align: center;
 }
 @keyframes slideDown {
   from { transform: translateY(-30px); opacity: 0; }
-  to { transform: translateY(0); opacity: 1; }
+  to   { transform: translateY(0); opacity: 1; }
+}
+@media (max-width: 600px) {
+  .welcome-content h1 {
+    font-size: 1.4rem;
+    padding: 0 1rem;
+  }
 }
 
 /* === Navbar === */
@@ -80,56 +85,55 @@ html, body {
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
 }
 .nav-container {
-  max-width: 960px;
-  margin: auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  max-width: 960px;
+  margin: auto;
+  color: white;
 }
 .logo {
-  color: #fff;
   font-size: 1.5rem;
   font-weight: 600;
   text-decoration: none;
+  color: #fff;
 }
 .nav-links {
-  display: flex;
   list-style: none;
+  display: flex;
   gap: 1rem;
 }
 .nav-links a {
-  color: #e0e7ff;
   text-decoration: none;
+  color: #e0e7ff;
   font-weight: 500;
   position: relative;
 }
 .nav-links a.active::after,
 .nav-links a:hover::after {
-  content: "";
+  content: '';
   position: absolute;
   bottom: -4px;
   left: 0;
-  height: 2px;
   width: 100%;
+  height: 2px;
   background: #6366f1;
 }
 .menu-toggle {
   display: none;
   font-size: 1.5rem;
-  color: white;
   cursor: pointer;
+  color: white;
 }
-
-/* === Responsive Navbar === */
 @media (max-width: 768px) {
   .nav-links {
     flex-direction: column;
-    position: absolute;
-    top: 60px;
-    right: 0;
-    background: #0f172a;
-    width: 100%;
     display: none;
+    background: #0f172a;
+    position: absolute;
+    right: 0;
+    top: 60px;
+    width: 100%;
     text-align: center;
   }
   .nav-links.active {
@@ -146,28 +150,12 @@ header {
   padding: 4rem 1rem;
   background: linear-gradient(to right, #4f46e5, #7c3aed);
   color: white;
-  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 header > * {
   margin-bottom: 1rem;
-}
-header::before {
-  content: "";
-  position: absolute;
-  top: -100px;
-  left: -100px;
-  width: 300px;
-  height: 300px;
-  background: radial-gradient(circle, rgba(255,255,255,0.1), transparent);
-  border-radius: 50%;
-  animation: float 10s infinite ease-in-out;
-}
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(20px); }
 }
 .gradient-text {
   background: linear-gradient(45deg, #fcd34d, #f472b6);
@@ -181,24 +169,25 @@ header::before {
   line-height: 0;
 }
 .wave {
+  display: block;
   width: 100%;
   height: 60px;
-  display: block;
   fill: #1e293b;
 }
 
 /* === Main Container === */
 .container {
   max-width: 960px;
-  padding: 2rem;
   margin: auto;
+  padding: 2rem;
   text-align: justify;
 }
 .container section,
-.container img,
-.container .btn {
+.container .btn,
+.container img {
   max-width: 700px;
-  margin: 1rem auto;
+  margin-left: auto;
+  margin-right: auto;
   display: block;
 }
 
@@ -208,21 +197,9 @@ header::before {
   height: 160px;
   object-fit: cover;
   border: 4px solid #6366f1;
+  margin: 2rem auto;
+  display: block;
   border-radius: 50%;
-}
-
-/* === Sections === */
-section h2 {
-  font-size: 1.8rem;
-  color: #93c5fd;
-  text-align: center;
-  margin-bottom: 1rem;
-}
-ul {
-  padding-left: 1.2rem;
-}
-strong {
-  color: #f3f4f6;
 }
 
 /* === Skills === */
@@ -252,19 +229,24 @@ strong {
   width: 0;
   transition: width 2s ease-in-out;
 }
+.skill-bar.animate .fill {
+  width: var(--skill-width);
+}
 @keyframes gradientMove {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
 
-/* === Buttons === */
+/* === Button === */
 .btn {
+  display: block;
+  margin-top: 2rem;
+  padding: 12px 24px;
   background: #6366f1;
   color: white;
-  padding: 12px 24px;
-  border-radius: 10px;
   text-decoration: none;
+  border-radius: 10px;
   font-weight: 500;
   transition: background 0.3s ease;
   text-align: center;
@@ -278,16 +260,16 @@ strong {
 }
 .btn.highlight:hover {
   background: #059669;
-  box-shadow: 0 0 15px #10b981, 0 0 30px #10b981;
+  box-shadow: 0 0 15px #10b981, 0 0 30px #10b981, 0 0 45px #10b981;
 }
 
-/* === Contact === */
-.contact-info p,
-.contact-info a {
+/* === Contact & Footer === */
+.contact-info p, .contact-info a {
   margin: 0.5rem 0;
   color: #cbd5e1;
 }
 .social-icons a {
+  display: inline-block;
   margin-right: 1rem;
   color: #93c5fd;
   text-decoration: none;
@@ -295,8 +277,33 @@ strong {
 .social-icons a:hover {
   color: #60a5fa;
 }
+.footer {
+  background: #0f172a;
+  color: #e5e7eb;
+  text-align: center;
+  padding: 1rem 0;
+  font-size: 0.9rem;
+}
+.footer a {
+  color: #a78bfa;
+  text-decoration: none;
+}
 
-/* === WhatsApp Float Button === */
+/* === Section Headings === */
+section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: #93c5fd;
+  text-align: center;
+}
+ul {
+  padding-left: 1.2rem;
+}
+strong {
+  color: #f3f4f6;
+}
+
+/* === WhatsApp Floating Button === */
 .whatsapp-float {
   position: fixed;
   bottom: 20px;
@@ -314,20 +321,7 @@ strong {
   background: #1ebe5d;
 }
 
-/* === Footer === */
-.footer {
-  background: #0f172a;
-  color: #e5e7eb;
-  text-align: center;
-  padding: 1rem 0;
-  font-size: 0.9rem;
-}
-.footer a {
-  color: #a78bfa;
-  text-decoration: none;
-}
-
-/* === Hide Everything on Load === */
+/* === Hide all content while loading === */
 body.loading {
   overflow: hidden;
   height: 100vh;
@@ -335,4 +329,3 @@ body.loading {
 body.loading *:not(#spinner-wrapper):not(#welcome-screen) {
   visibility: hidden;
 }
-
