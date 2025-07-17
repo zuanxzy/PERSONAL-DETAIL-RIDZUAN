@@ -232,7 +232,7 @@ header::before {
   overflow: hidden;
 }
 .skill-bar .fill {
-  background: #6366f1;
+  background: linear-gradient(90deg, #4f46e5, #6366f1, #7c3aed);
   height: 20px;
   color: white;
   text-align: right;
