@@ -326,3 +326,14 @@ strong {
 .whatsapp-float:hover {
   background: #1ebe5d;
 }
+/* Center the content inside the header */
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Optional: give a small gap between elements */
+header > * {
+  margin-bottom: 1rem;
+}
